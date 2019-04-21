@@ -9,7 +9,7 @@ var player;
             'autoplay': 0,
 	    'enablejsapi': 1,
 	    'fs': 0,
-            'origin': 'https://sarbagyadhaubanjar.github.io',
+            'origin': 'https://www.youtube.com',
 	    'rel': 0,
 	    'showinfo': 0,
 	    'iv_load_policy': 3,
