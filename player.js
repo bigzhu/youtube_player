@@ -17,7 +17,7 @@ var player;
 	    'cc_load_policy': 0
           },
            events: {
-    		onReady: function(event) { Ready.postMessage("Ready"); event.target.playVideo()},
+    		onReady: function(event) { Ready.postMessage("Ready")},
     		onStateChange: function(event) { sendPlayerStateChange(event.data) },
     		onPlaybackQualityChange: function(event) { PlaybackQualityChange.postMessage(event.data) },
     		onPlaybackRateChange: function(event) { PlaybackRateChange.postMessage(event.data) },
