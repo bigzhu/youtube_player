@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        overflow: hidden;
+        position: fixed;
+        position: relative;
+    }
+
+    .flexbox {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div id="player"></div>
+    </div>
+</body>
+
+
+
+<script type="text/javascript">
+    var player = null;
+    function initVimeoPlayer() {
+        var w = document.body.clientWidth;
+        var h = document.body.clientHeight;
+        var options = {
+            autoplay: true,
+            playsinline: true,
+            muted: false,
+            loop: false,
+            title: true,
+            portrait: true,
+            byline: true,
+            speed: true,
+            transparent: true,
+            width: w,
+            height: h
+        };
+        player = new Vimeo.Player('player', options);
+        player.on('timeupdate', function (data) {
+            OnTimeUpdate.postMessage(data.seconds);
+        });
+        player.on('play', function (data) {
+            OnPlay.postMessage(data.duration)
+        });
+        player.on('pause', function (data) {
+            OnPause.postMessage(data.seconds)
+        });
+        player.on('ended', function (data) {
+            OnEnded.postMessage(data.duration)
+        });
+        player.on('volumechange', function (data) {
+            OnVolumeChange.postMessage(data.volume)
+        });
+        player.on('error', function (data) {
+            OnError.postMessage(data.message + ',' + data.method + ',' + data.name)
+        });
+        player.ready().then(function () {
+            player.getDuration().then(function (duration) {
+                player.getVideoTitle().then(function (title) {
+                    var videoData = {
+                        'duration': duration,
+                        'videoUrl': title,
+                    };
+                    Ready.postMessage(JSON.stringify(videoData));
+                }).catch(function (error) {
+                    Ready.postMessage('Failed');
+                })
+            }).catch(function (error) {
+                Ready.postMessage('Failed');
+            })
+        }).catch(function (error) {
+            Ready.postMessage('Failed');
+        });
+    }
+    function seekTo(startSeconds) {
+        player.setCurrentTime(startSeconds)
+    }
+    function pauseVideo() {
+        player.pause()
+    }
+    function playVideo() {
+        player.play()
+    }
+    function loadVideo(videoId) {
+        player.loadVideo(videoId).then(function (id) {
+            player.getDuration().then(function (duration) {
+                player.getVideoTitle().then(function (title) {
+                    var videoData = {
+                        'duration': duration,
+                        'videoUrl': title,
+                    };
+                    Ready.postMessage(JSON.stringify(videoData));
+                }).catch(function (error) {
+                    Ready.postMessage('Failed');
+                })
+            }).catch(function (error) {
+                Ready.postMessage('Failed');
+            })
+        })
+    }
+    function setVolume(volumePercent) {
+        player.setVolume(volumePercent)
+    }
+    function destroyPlayer() {
+        player.destroy()
+    }
+    function setColor(hexColor) {
+        player.setColor(hexColor)
+    }
+    function setLoop(loop) {
+        player.setLoop(loop)
+    }
+    function setPlaybackRate(playbackRate) {
+        player.setPlaybackRate(playbackRate)
+    }
+</script>
+
+</html>
