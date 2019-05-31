@@ -103,6 +103,7 @@
     }
     function loadVideo(videoId) {
         player.loadVideo(videoId).then(function (id) {
+            Log.postMessage('Sarbagya 2 $id');
             player.getDuration().then(function (duration) {
                 player.getVideoTitle().then(function (title) {
                     var videoData = {
