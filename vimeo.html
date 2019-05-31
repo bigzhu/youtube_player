@@ -38,11 +38,12 @@
 <script type="text/javascript">
     var player = null;
     Log.postMessage('Sarbagya 1');
-    function initVimeoPlayer() {
+    function initVimeoPlayer(videoId) {
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
         var options = {
             autoplay: true,
+            id: videoID,
             playsinline: true,
             muted: false,
             loop: false,
