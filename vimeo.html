@@ -37,6 +37,7 @@
 
 <script type="text/javascript">
     var player = null;
+    Log.postMessage('Sarbagya 1');
     function initVimeoPlayer() {
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
@@ -53,6 +54,7 @@
             width: w,
             height: h
         };
+        Log.postMessage('Sarbagya 2');
         player = new Vimeo.Player('player', options);
         player.on('timeupdate', function (data) {
             OnTimeUpdate.postMessage(data.seconds);
