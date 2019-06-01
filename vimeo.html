@@ -67,7 +67,7 @@
             OnTimeUpdate.postMessage(JSON.stringify(videoData));
         });
         player.on('progress', function (data) {
-            OnProgress.postMessage(data.seconds);
+            OnProgress.postMessage(data.percent);
         });
         player.on('playbackratechange', function (data) {
             OnPlaybackRateChange.postMessage(data.playbackRate);
