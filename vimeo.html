@@ -129,6 +129,7 @@
                         'videoUrl': title,
                     };
                     Ready.postMessage(JSON.stringify(videoData));
+                    playVideo();
                 }).catch(function (error) {
                     Ready.postMessage('Failed');
                 })
