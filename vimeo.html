@@ -68,6 +68,12 @@
         player.on('pause', function (data) {
             OnPause.postMessage(data.seconds)
         });
+        player.on('bufferstart', function () {
+            OnBufferStart.postMessage()
+        });
+        player.on('bufferend', function () {
+            OnBufferEnd.postMessage()
+        });
         player.on('ended', function (data) {
             OnEnded.postMessage(data.duration)
         });
