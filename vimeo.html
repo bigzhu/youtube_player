@@ -37,9 +37,7 @@
 
 <script type="text/javascript">
     var player = null;
-    Log.postMessage('Sarbagya 1');
     function initVimeoPlayer(videoId) {
-         Log.postMessage(videoId);
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
         var options = {
@@ -57,7 +55,6 @@
             width: w,
             height: h
         };
-        Log.postMessage('Sarbagya 2');
         player = new Vimeo.Player('player', options);
         player.on('timeupdate', function (data) {
             var videoData = {
@@ -114,7 +111,9 @@
     function seekTo(startSeconds) {
         player.setCurrentTime(startSeconds).then(function() {
 		return player.play();
-	});
+	}).catch(function(error) {
+    Log.postMessage(error);
+});
     }
     function pauseVideo() {
         player.pause()
