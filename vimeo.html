@@ -95,7 +95,7 @@
                 player.getVideoTitle().then(function (title) {
                     var videoData = {
                         'duration': duration,
-                        'videoUrl': title,
+                        'title': title,
                     };
                     Ready.postMessage(JSON.stringify(videoData));
                 }).catch(function (error) {
