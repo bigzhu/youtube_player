@@ -76,10 +76,10 @@
             OnPause.postMessage(data.seconds)
         });
         player.on('bufferstart', function () {
-            OnBufferStart.postMessage()
+            OnBufferStart.postMessage('Started')
         });
         player.on('bufferend', function () {
-            OnBufferEnd.postMessage()
+            OnBufferEnd.postMessage('Ended')
         });
         player.on('ended', function (data) {
             OnEnded.postMessage(data.duration)
