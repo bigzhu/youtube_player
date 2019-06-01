@@ -62,6 +62,9 @@
         player.on('timeupdate', function (data) {
             OnTimeUpdate.postMessage(data.seconds);
         });
+        player.on('progress', function (data) {
+            OnProgress.postMessage(data.seconds);
+        });
         player.on('play', function (data) {
             OnPlay.postMessage(data.duration)
         });
