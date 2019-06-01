@@ -60,7 +60,7 @@
         Log.postMessage('Sarbagya 2');
         player = new Vimeo.Player('player', options);
         player.on('timeupdate', function (data) {
-            OnTimeUpdate.postMessage(data.seconds);
+            OnTimeUpdate.postMessage(data);
         });
         player.on('progress', function (data) {
             OnProgress.postMessage(data.seconds);
