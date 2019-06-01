@@ -87,7 +87,7 @@
             OnVolumeChange.postMessage(data.volume)
         });
         player.on('error', function (data) {
-            OnError.postMessage(data.message + ',' + data.method + ',' + data.name)
+            OnError.postMessage(data.message + '\nwhile calling: ' + data.method)
         });
         player.ready().then(function () {
             player.getDuration().then(function (duration) {
