@@ -109,7 +109,9 @@
         });
     }
     function seekTo(startSeconds) {
-        player.setCurrentTime(startSeconds)
+        player.setCurrentTime(startSeconds).then(function(data){
+            playVideo()
+        })
     }
     function pauseVideo() {
         player.pause()
