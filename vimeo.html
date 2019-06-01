@@ -37,11 +37,11 @@
 
 <script type="text/javascript">
     var player = null;
-    function initVimeoPlayer(videoId) {
+    function initVimeoPlayer(videoId, autoPlay) {
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
         var options = {
-            autoplay: true,
+            autoplay: autoPlay,
             id: videoId,
             playsinline: true,
             controls: false,
