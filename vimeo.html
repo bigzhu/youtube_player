@@ -65,6 +65,9 @@
         player.on('progress', function (data) {
             OnProgress.postMessage(data.seconds);
         });
+        player.on('playbackratechange', function (data) {
+            OnPlaybackRateChange.postMessage(data.playbackRate);
+        });
         player.on('play', function (data) {
             OnPlay.postMessage(data.duration)
         });
