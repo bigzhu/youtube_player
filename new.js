@@ -52,3 +52,10 @@ var player;
                 LoadedFraction.postMessage(player.getVideoLoadedFraction());
             }, 100 );
       }
+
+
+function loadVideo(videoID, startAt){
+	player.loadVideoById(videoID, startAt)
+	return ''
+}
+
