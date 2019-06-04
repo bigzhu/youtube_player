@@ -54,7 +54,7 @@ var player;
       }
 
 
-function loadVideo(videoID, startAt){
+function loadVideoById(videoID, startAt){
 	player.loadVideoById(videoID, startAt)
 	return ''
 }
