@@ -84,7 +84,7 @@ function mute() {
     return '';
 }
 
-function unmute() {
+function unMute() {
     player.unmute();
     return '';
 }
