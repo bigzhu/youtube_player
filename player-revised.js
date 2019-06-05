@@ -29,7 +29,7 @@ function onYouTubeIframeAPIReady(){
 function hideAnnotations() {
     document.body.style.height = '1000%';
     document.body.style.width = '1000%';
-    document.body.style.transform = scale(0.1);
+    document.body.style.transform = 'scale(0.1)';
     document.body.style.transformOrigin = 'left top';
 }
 
