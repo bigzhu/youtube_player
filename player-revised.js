@@ -71,7 +71,7 @@ function pause() {
 
 function loadById(id, startAt) {
     player.loadVideoById(id, startAt);
-    
+    return '';
 }
 
 function cueById(id, startAt) {
