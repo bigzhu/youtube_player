@@ -15,7 +15,6 @@ function onYouTubeIframeAPIReady(){
 	        'iv_load_policy': 3,
 	        'modestbranding': 1,
 	        'cc_load_policy': 0,
-		'widget_referrer':'https://sarbagyadhaubanjar.github.io'
           },
         events: {
             onReady: function (event) { Ready.postMessage("Ready") },
