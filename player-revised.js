@@ -9,7 +9,7 @@ function onYouTubeIframeAPIReady(){
             'autoplay': 0,
 	        'enablejsapi': 1,
 	        'fs': 0,
-            'origin': 'https://sarbagyadhaubanjar.github.io,
+            'origin': 'https://sarbagyadhaubanjar.github.io',
 	        'rel': 0,
 	        'showinfo': 0,
 	        'iv_load_policy': 3,
