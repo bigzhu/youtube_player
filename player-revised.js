@@ -18,7 +18,7 @@ function onYouTubeIframeAPIReady(){
 	        'cc_load_policy': 0,
           },
         events: {
-            onReady: function (event) { Ready.postMessage("Ready") },
+            onReady: function (event) { event.target.playVideo(); Ready.postMessage("Ready") },
             onStateChange: function (event) { sendPlayerStateChange(event.data) },
             onPlaybackQualityChange: function (event) { PlaybackQualityChange.postMessage(event.data) },
             onPlaybackRateChange: function (event) { PlaybackRateChange.postMessage(event.data) },
