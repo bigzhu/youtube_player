@@ -2,23 +2,18 @@
 <html>
 <style type="text/css">
     html,
-    body {
-         height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        padding-bottom: 56.25%;
-        background-color: #000000;
-        overflow: hidden;
-        position: fixed;
+    .embed-container {
         position: relative;
+        padding-bottom: 56.25%;
+        height: 0; overflow: hidden;
+        max-width: 100%; height: auto;
     }
-    .flexbox {
-        height: 100%;
+    .embed-container div, .embed-container object, .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 100%;
     }
 </style>
 
@@ -28,7 +23,7 @@
 </head>
 
 <body>
-    <div class="flexbox">
+    <div class="embed-container">
         <div id="player"></div>
     </div>
 </body>
