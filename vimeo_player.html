@@ -7,6 +7,7 @@
         width: 100%;
         margin: 0;
         padding: 0;
+        padding-bottom: 56.25%;
         background-color: #000000;
         overflow: hidden;
         position: fixed;
@@ -51,6 +52,7 @@
             byline: true,
             speed: true,
             transparent: true,
+            responsive: true,
             w: w,
             h: h
         };
@@ -120,7 +122,6 @@
     }
     function loadVideo(videoId) {
         player.loadVideo(videoId).then(function (id) {
-            Log.postMessage('Sarbagya 2 $id');
             player.getDuration().then(function (duration) {
                 player.getVideoTitle().then(function (title) {
                     var videoData = {
