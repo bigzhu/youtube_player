@@ -30,10 +30,6 @@
 <script type="text/javascript">
     var player = null;
     function initVimeoPlayer(videoId, autoPlay) {
-        var w = document.body.clientWidth;
-        var h = document.body.clientHeight;
-        console.log(w);
-        console.log(h);
         var options = {
             autoplay: autoPlay,
             id: videoId,
@@ -46,9 +42,7 @@
             byline: true,
             speed: true,
             transparent: true,
-            responsive: true,
-            w: w,
-            h: h
+            responsive: true
         };
         player = new Vimeo.Player('player', options);
         player.on('timeupdate', function (data) {
