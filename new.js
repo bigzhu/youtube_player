@@ -32,10 +32,10 @@ function hideAnnotations() {
     document.body.style.width = '1000%';
     document.body.style.transform = 'scale(0.1)';
     document.body.style.transformOrigin = 'left top'; 
-    document.html.style.height = '1000%';
-    document.html.style.width = '1000%';
-    document.html.style.transform = 'scale(0.1)';
-    document.html.style.transformOrigin = 'left top';
+    document.documentElement.style.height = '1000%';
+    document.documentElement.style.width = '1000%';
+    document.documentElement.style.transform = 'scale(0.1)';
+    document.documentElement.style.transformOrigin = 'left top';
 }}
 
 function sendPlayerStateChange(playerState) {
