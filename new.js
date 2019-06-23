@@ -36,7 +36,7 @@ function hideAnnotations() {
     document.documentElement.style.width = '1000%';
     document.documentElement.style.transform = 'scale(0.1)';
     document.documentElement.style.transformOrigin = 'left top';
-}}
+}
 
 function sendPlayerStateChange(playerState) {
     clearTimeout(timerId);
