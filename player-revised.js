@@ -104,3 +104,8 @@ function seekTo(position, seekAhead) {
     player.seekTo(position, seekAhead);
     return '';
 }
+
+function setSize(width, height) {
+    player.setSize(width, height);
+    return '';
+}
