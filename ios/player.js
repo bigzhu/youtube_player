@@ -98,3 +98,8 @@ function setSize(width, height) {
     player.setSize(width, height);
     return '';
 }
+
+function setPlaybackRate(rate) {
+    player.setPlaybackRate(rate);
+    return '';
+}
