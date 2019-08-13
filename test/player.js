@@ -19,24 +19,19 @@ function onYouTubeIframeAPIReady() {
             'cc_load_policy': 0,
         },
         events: {
-            onReady: onPlayerReady//function (event) { console.log('help'); event.target.loadVideoById('D0-ztCFydA', 0); /*Ready.postMessage("Ready") */ },
-            /*onStateChange: function (event) { sendPlayerStateChange(event.data) },
-            onPlaybackQualityChange: function (event) { PlaybackQualityChange.postMessage(event.data) },
-            onPlaybackRateChange: function (event) { PlaybackRateChange.postMessage(event.data) },
-            onError: function (error) { Errors.postMessage(error.data) }*/
+            onReady: function (event) { console.log('helpo'); /*Ready.postMessage("Ready") */ },
+            onStateChange: function (event) { sendPlayerStateChange(event.data) },
+            onPlaybackQualityChange: function (event) { /*PlaybackQualityChange.postMessage(event.data)*/ },
+            onPlaybackRateChange: function (event) { /*PlaybackRateChange.postMessage(event.data)*/ },
+            onError: function (error) { /*Errors.postMessage(error.data)*/ }
         },
     });
     console.log(player)
 }
 
-function onPlayerReady(e) {
-    console.log('help');
-    //player.loadVideoById('iLnmTe5Q2Qw', 0);
-}
-
 function sendPlayerStateChange(playerState) {
     clearTimeout(timerId);
-    StateChange.postMessage(playerState);
+    /*StateChange.postMessage(playerState);*/
     if (playerState == 1) {
         startSendCurrentTimeInterval();
         sendVideoData(player);
@@ -50,13 +45,13 @@ function sendVideoData(player) {
         'availableQualityLevels': player.getAvailableQualityLevels(),
         'videoEmbedCode': player.getVideoEmbedCode(),
     };
-    VideoData.postMessage(JSON.stringify(videoData));
+    /*VideoData.postMessage(JSON.stringify(videoData));*/
 }
 
 function startSendCurrentTimeInterval() {
     timerId = setInterval(function () {
-        CurrentTime.postMessage(player.getCurrentTime());
-        LoadedFraction.postMessage(player.getVideoLoadedFraction());
+        /*CurrentTime.postMessage(player.getCurrentTime());
+        LoadedFraction.postMessage(player.getVideoLoadedFraction());*/
     }, 100);
 }
 
