@@ -20,7 +20,7 @@ function onYouTubeIframeAPIReady() {
         },
         events: {
             onReady: function (event) { console.log('helpo'); /*Ready.postMessage("Ready") */ },
-            onStateChange: function (event) { /*sendPlayerStateChange(event.data) */},
+            onStateChange: function (event) { sendPlayerStateChange(event.data)},
             onPlaybackQualityChange: function (event) { /*PlaybackQualityChange.postMessage(event.data)*/ },
             onPlaybackRateChange: function (event) { /*PlaybackRateChange.postMessage(event.data)*/ },
             onError: function (error) { /*Errors.postMessage(error.data)*/ }
