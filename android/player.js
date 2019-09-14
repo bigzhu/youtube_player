@@ -16,7 +16,7 @@ function onYouTubeIframeAPIReady() {
             'showinfo': 0,
             'iv_load_policy': 3,
             'modestbranding': 1,
-            'cc_load_policy': 0,
+            'cc_load_policy': 1,
         },
         events: {
             onReady: function (event) { Ready.postMessage("Ready") },
