@@ -1223,10 +1223,7 @@
     if ((a = "string" === typeof a ? c.getElementById(a) : a))
       if (
         ((c = "iframe" == a.tagName.toLowerCase()),
-        b.host ||
-          (b.host = c
-            ? Va(a.src)
-            : "https://www.youtube.com?origin=https://bigzhu.github.io"),
+        b.host || (b.host = c ? Va(a.src) : "https://www.youtube.com"),
         (this.b = new Pb(b)),
         c ||
           ((b = Ub(this, a)),
