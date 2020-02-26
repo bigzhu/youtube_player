@@ -1395,14 +1395,14 @@
     if (this.a.contentWindow)
       for (c = 0; c < b.length; c++)
         try {
-          //this.a.contentWindow.postMessage(a, b[c]);
-
+          this.a.contentWindow.postMessage(a, b[c]);
           //skip first post message for SHUT UP : Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin
-
+          /*
           if (this._skiped) {
             this.a.contentWindow.postMessage(a, b[c]);
           }
           this._skiped = true;
+          */
         } catch (f) {
           if (f.name && "SyntaxError" == f.name) {
             if (!(f.message && 0 < f.message.indexOf("target origin ''"))) {

@@ -2,7 +2,7 @@ if (!window["YT"]) {
   var YT = { loading: 0, loaded: 0 };
 }
 if (!window["YTConfig"]) {
-  var YTConfig = { host: "http://www.youtube.com" };
+  var YTConfig = { host: "https://www.youtube.com" };
 }
 if (!YT.loading) {
   YT.loading = 1;
