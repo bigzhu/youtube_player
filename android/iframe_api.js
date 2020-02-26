@@ -48,4 +48,3 @@ if (!YT.loading) {
     b.parentNode.insertBefore(a, b);
   })();
 }
-
