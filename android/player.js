@@ -36,7 +36,6 @@ function createPlayerByVars(playerVars) {
   player = new YT.Player("player", {
     height: "100%",
     width: "100%",
-    host: "https://www.youtube.com",
     playerVars: playerVars,
     events: {
       onReady: function() {
