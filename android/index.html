@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="player.css" />
+    <link rel="stylesheet" type="text/css" href="player.css?v=1" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -40,7 +40,7 @@
         iv_load_policy: 3,
         modestbranding: 1,
         cc_load_policy: getCCLoadPolicy(),
-        cc_lang_pref: "en"
+        cc_lang_pref: "en",
       };
 
       function getCCLoadPolicy() {
@@ -59,22 +59,22 @@
           width: "100%",
           playerVars: playerVars,
           events: {
-            onReady: function() {
+            onReady: function () {
               Ready.postMessage("Ready");
             },
-            onStateChange: function(event) {
+            onStateChange: function (event) {
               sendPlayerStateChange(event.data);
             },
-            onPlaybackQualityChange: function(event) {
+            onPlaybackQualityChange: function (event) {
               PlaybackQualityChange.postMessage(event.data);
             },
-            onPlaybackRateChange: function(event) {
+            onPlaybackRateChange: function (event) {
               PlaybackRateChange.postMessage(event.data);
             },
-            onError: function(error) {
+            onError: function (error) {
               Errors.postMessage(error.data);
-            }
-          }
+            },
+          },
         });
       }
 
@@ -103,13 +103,13 @@
           duration: player.getDuration(),
           videoUrl: player.getVideoUrl(),
           availableQualityLevels: player.getAvailableQualityLevels(),
-          videoEmbedCode: player.getVideoEmbedCode()
+          videoEmbedCode: player.getVideoEmbedCode(),
         };
         VideoData.postMessage(JSON.stringify(videoData));
       }
 
       function startSendCurrentTimeInterval() {
-        timerId = setInterval(function() {
+        timerId = setInterval(function () {
           CurrentTime.postMessage(player.getCurrentTime());
           LoadedFraction.postMessage(player.getVideoLoadedFraction());
         }, 100);
