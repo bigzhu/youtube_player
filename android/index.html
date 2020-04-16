@@ -79,13 +79,13 @@
       }
 
       function hideAnnotations() {
+        // can't get CROS iframe content
+        /*
         var iframe = document.getElementById("player");
-        var elements = iframe.contentDocument.getElementByClassName(
-          "ytp-button"
-        );
         for (var e of elements) {
           e.style.display === "none";
         }
+        */
       }
 
       function sendPlayerStateChange(playerState) {
