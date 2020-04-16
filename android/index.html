@@ -79,7 +79,10 @@
       }
 
       function hideAnnotations() {
-        var elements = document.getElementByClassName("ytp-button");
+        var iframe = document.getElementById("player");
+        var elements = iframe.contentDocument.getElementByClassName(
+          "ytp-button"
+        );
         for (var e of elements) {
           e.style.display === "none";
         }
