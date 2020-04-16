@@ -79,14 +79,10 @@
       }
 
       function hideAnnotations() {
-        document.body.style.height = "1000%";
-        document.body.style.width = "1000%";
-        document.body.style.transform = "scale(0.1)";
-        document.body.style.transformOrigin = "left top";
-        document.documentElement.style.height = "1000%";
-        document.documentElement.style.width = "1000%";
-        document.documentElement.style.transform = "scale(0.1)";
-        document.documentElement.style.transformOrigin = "left top";
+        var elements = document.getElementByClassName("ytp-button");
+        for (var e of elements) {
+          e.style.display === "none";
+        }
       }
 
       function sendPlayerStateChange(playerState) {
